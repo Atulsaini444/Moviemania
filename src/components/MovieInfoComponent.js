@@ -7,11 +7,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: row;
   padding: 20px 30px;
-  align-items: center;
   border-bottom: 1px solid lightgray;
-  @media (max-width: 602px) {
-    flex-direction: column;
-  }
 `;
 
 const CoverImage = styled.img`
@@ -76,8 +72,25 @@ const MovieInfo = styled.span`
   }
 `;
 
+const MainData = styled.div`
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    @media (max-width: 602px) {
+    flex-direction: column;
+  }
+`
+
 const Close = styled.span`
-  display: none;
+  font-size: 25px;
+  font-weight: 700;
+  color: black;
+  /* background: lightgray; */
+  height: fit-content;
+  padding: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0.8;
 `;
 
 function MovieInfoComponent(props) {
@@ -93,6 +106,7 @@ function MovieInfoComponent(props) {
     <Container>
       {movieInfo ? (
         <>
+        <MainData>
           <CoverImage src={movieInfo?.Poster} />
           <InfoColumn>
             <MovieName>
@@ -126,6 +140,7 @@ function MovieInfoComponent(props) {
               Plot: <span>{movieInfo?.Plot}</span>
             </MovieInfo>
           </InfoColumn>
+        </MainData> 
           <Close onClick={() => props.onMovieSelect()}>X</Close>
         </>
       ) : (

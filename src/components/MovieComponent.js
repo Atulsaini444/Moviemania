@@ -5,15 +5,22 @@ const MovieContainer = styled.div`
   display: flex;
   flex-direction: column;
   box-shadow: 0 3px 10px 0 #aaa;
-  width: 205px;
+  width: 225px;
   padding: 10px;
   margin-bottom: 25px;
   cursor: pointer;
+  @media (max-width: 510px) {
+    width: 285px;
+    height: 380px;
+  }
 `
 
 const CoverImage = styled.img`
   height: 202px;
   object-fit: cover;
+  @media (max-width: 511px) {
+    height: 280px;
+  }
 `
 
 const MovieName = styled.span`
