@@ -10,8 +10,8 @@ const MovieContainer = styled.div`
   margin-bottom: 25px;
   cursor: pointer;
   @media (max-width: 510px) {
-    width: 285px;
-    height: 380px;
+    width: 265px;
+    height: 360px;
   }
 `
 
